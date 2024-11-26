@@ -1,15 +1,17 @@
 .chat
 {
     flex: 2;
-    border-left: 2px solid white;
-    border-right: 2px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
     height: 100%;
+    display: flex;
+    flex-direction: column;
     .top
     {
         padding: 20px;
         display: flex;
         align-items: center;
-        border-bottom: 2px solid white;
+        border-bottom: 1px solid white;
         justify-content: space-between;
         .chatter
         {
@@ -57,6 +59,132 @@
             };
           }
          
+    }
+
+    .center{
+        padding: 20px;
+        flex: 1;
+        overflow: scroll;
+        scrollbar-width: none;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .message
+        {
+            max-width: 70%;
+            display: flex;
+            gap: 20px;
+
+            &.own
+            {
+               align-self: flex-end;
+               .texts{
+                p{
+                    background-color: rgba(190, 195, 179,0.6) ;
+                    border-radius: 20px;
+                    padding: 20px;
+                }
+
+                span{
+                    font-size: 14px;
+                }
+               }
+            }
+
+          img{
+             width: 40px;
+             height: 40px;
+             border-radius: 50%;
+             object-fit: cover;
+          }
+
+          .texts{
+            flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                
+                img{
+                    width: 100%;
+                    height: 300px;
+                    border-radius: 10px;
+                }
+
+                p{
+                    padding: 20px;
+                    background-color: rgba(3, 2, 3, 0.6);
+                    color: white;
+                    border-radius: 20px;
+                }
+
+                span{
+                    font-size: 14px;
+                }
+          }
+
+
+
+        }
+
+      
+    }
+    .bottom{
+        margin-top: auto;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top:1px solid white ;
+        gap: 20px;
+
+        .icons{
+                display: flex;
+                gap: 20px;
+        }
+
+        img{
+            height: 25px;
+            width: 25px;
+            cursor: pointer;
+        }
+
+        input
+        {
+            flex:1;
+            background-color: rgba(190, 195, 179,0.5);
+            border: none;
+            outline: none;
+            padding: 10px;
+            border-radius: 40px;
+            font-size: 16px;
+        }
+
+        .emoji
+        {
+            position: relative;
+            .picker
+            {
+                position:absolute;
+                bottom: 50px;
+                left: 0;
+            }
+        }
+
+        button
+        {
+            padding: 10px;
+            border-radius: 40px;
+            border: none;
+            cursor: pointer;
+            background-color:rgba(190, 195, 179,0.5) ;
+        }
+
+        button:hover{
+            color:white;
+            background-color: black;
+        }
+
     }
         
 }
